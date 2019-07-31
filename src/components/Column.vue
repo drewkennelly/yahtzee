@@ -31,26 +31,43 @@
         <input type="number" min="0" max="36" v-model.number="six" />
       </div>
 
-      <div>
+      <div class="bold-row">
         <label v-show="number == 1">Sub total</label>
-        <input type="number" min="0" max="36" v-model.number="minor" class="disabled-readonly" />
+        <input
+          type="number"
+          min="0"
+          max="36"
+          v-model.number="minor"
+          class="disabled-readonly"
+          disabled
+          readonly
+        />
       </div>
 
-      <div>
+      <div class="bold-row">
         <label v-show="number == 1">Bonus</label>
         <input
           type="number"
           min="0"
           max="36"
           v-model.number="bonus"
-          class="disabled-readonly"
           :class="bonusStyle"
+          disabled
+          readonly
         />
       </div>
 
-      <div>
+      <div class="bold-row">
         <label v-show="number == 1">Total 1</label>
-        <input type="number" min="0" max="36" v-model.number="subTotal" class="disabled-readonly" />
+        <input
+          type="number"
+          min="0"
+          max="36"
+          v-model.number="subTotal"
+          class="disabled-readonly"
+          disabled
+          readonly
+        />
       </div>
 
       <div>
@@ -87,14 +104,30 @@
         <input type="number" min="0" max="30" v-model.number="chance" />
       </div>
 
-      <div>
+      <div class="bold-row">
         <label v-show="number == 1">Total 2</label>
-        <input type="number" min="0" max="30" v-model.number="major" class="disabled-readonly" />
+        <input
+          type="number"
+          min="0"
+          max="30"
+          v-model.number="major"
+          class="disabled-readonly"
+          disabled
+          readonly
+        />
       </div>
 
-      <div>
+      <div class="bold-row">
         <label v-show="number == 1">Total</label>
-        <input type="number" min="0" max="30" v-model.number="total" class="disabled-readonly" />
+        <input
+          type="number"
+          min="0"
+          max="30"
+          v-model.number="total"
+          class="disabled-readonly"
+          disabled
+          readonly
+        />
       </div>
     </div>
   </div>
@@ -155,9 +188,20 @@ export default {
       return Number(this.subTotal + this.major);
     },
     bonusStyle() {
-      return {
-        "bg-green-300": this.bonus == 35
-      };
+      let style = {};
+
+      if (this.bonus == 35) {
+        style = {
+          "bg-green-300": true
+        };
+      } else {
+        style = {
+          "bg-transparent": true,
+          "border-gray-100": true
+        };
+      }
+
+      return style;
     }
   }
 };

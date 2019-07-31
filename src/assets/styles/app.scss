@@ -3,7 +3,7 @@
 @tailwind utilities;
 
 input {
-  @apply border rounded px-2 py-1 text-center mb-1 appearance-none text-sm;
+  @apply border rounded px-2 py-1 text-center mb-1 appearance-none text-sm outline-none;
 }
 
 input[type="number"]::-webkit-inner-spin-button,
@@ -18,4 +18,11 @@ label {
 
 .disabled-readonly {
   @apply bg-transparent border-gray-100;
+}
+
+.bold-row {
+  label,
+  input {
+    @apply font-bold;
+  }
 }
