@@ -3,13 +3,17 @@
 @tailwind utilities;
 
 input {
-  @apply border rounded px-2 py-1 text-center mb-1 appearance-none text-sm outline-none;
+  @apply border rounded px-2 w-auto w-12 py-1 text-center mb-1 appearance-none text-sm outline-none;
 }
 
 input[type="number"]::-webkit-inner-spin-button,
 input[type="number"]::-webkit-outer-spin-button {
   -webkit-appearance: none;
   margin: 0;
+}
+
+input[type="number"]::placeholder {
+  @apply text-gray-500;
 }
 
 label {
@@ -21,8 +25,11 @@ label {
 }
 
 .bold-row {
-  label,
-  input {
+  label {
     @apply font-bold;
+  }
+
+  input {
+    @apply font-semibold;
   }
 }
