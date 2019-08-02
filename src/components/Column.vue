@@ -131,24 +131,98 @@ export default {
       return 0;
     },
     placeholders() {
+      let remaining = this.remainingForBonus;
+
       let six = 0;
       if (this.six == "") {
-        if (this.remainingForBonus >= 6) {
-          let sixesRequired = Math.ceil(this.remainingForBonus / 6);
+        if (remaining >= 6) {
+          let sixesRequired = Math.ceil(remaining / 6);
           if (sixesRequired >= 5) {
             six = 5;
-            let remaining = this.remainingForBonus - 30;
-            console.log("Remaining: ", remaining);
+            remaining = remaining - 30;
+          } else {
+            six = sixesRequired;
+            remaining = remaining - sixesRequired * 6;
+          }
+        }
+      }
+
+      let five = 0;
+      if (this.five == "") {
+        if (remaining >= 5) {
+          let fivesRequired = Math.ceil(remaining / 5);
+          if (fivesRequired >= 5) {
+            five = 5;
+            remaining = remaining - 25;
+          } else {
+            five = fivesRequired;
+            remaining = remaining - fivesRequired * 5;
+          }
+        }
+      }
+
+      let four = 0;
+      if (this.four == "") {
+        if (remaining >= 4) {
+          let foursRequired = Math.ceil(remaining / 4);
+          if (foursRequired >= 5) {
+            four = 5;
+            remaining = remaining - 20;
+          } else {
+            four = foursRequired;
+            remaining = remaining - foursRequired * 4;
+          }
+        }
+      }
+
+      let three = 0;
+      if (this.three == "") {
+        if (remaining >= 3) {
+          let threesRequired = Math.ceil(remaining / 3);
+          if (threesRequired >= 5) {
+            three = 5;
+            remaining = remaining - 15;
+          } else {
+            three = threesRequired;
+            remaining = remaining - threesRequired * 3;
+          }
+        }
+      }
+
+      let two = 0;
+      if (this.two == "") {
+        if (remaining >= 2) {
+          let twosRequired = Math.ceil(remaining / 2);
+          if (twosRequired >= 5) {
+            two = 5;
+            remaining = remaining - 10;
+          } else {
+            two = twosRequired;
+            remaining = remaining - twosRequired * 2;
+          }
+        }
+      }
+
+      let one = 0;
+      if (this.one == "") {
+        if (remaining >= 1) {
+          let onesRequired = remaining;
+          if (onesRequired >= 5) {
+            one = 5;
+            remaining = remaining - 5;
+          } else {
+            one = onesRequired;
+            remaining = remaining - onesRequired;
           }
         }
       }
 
       return {
-        one: 0,
-        two: 0,
-        three: 0,
-        four: 0,
-        five: 0,
+        one: one,
+        two: two,
+        three: three,
+        four: four,
+        five: five,
         six: six,
         threeOfAKind: 0,
         fourOfAKind: 0,
