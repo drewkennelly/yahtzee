@@ -4,14 +4,14 @@
       <h1 class="text-3xl">Yahtzee</h1>
 
       <div class="flex justify-end">
-        <div class="w-1/3">
-          <label for>Players</label>
-          <input type="number" class="w-20" v-model.number="players" />
+        <div class>
+          <label for class="w-auto mr-2">Players</label>
+          <input type="number" class="w-16" v-model.number="players" />
         </div>
 
-        <div class="w-1/3 ml-8">
-          <label for>Columns</label>
-          <input type="number" class="w-20" v-model.number="columns" />
+        <div class="ml-8">
+          <label for class="w-auto mr-2">Columns</label>
+          <input type="number" class="w-16" v-model.number="columns" />
         </div>
       </div>
     </div>

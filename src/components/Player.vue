@@ -16,9 +16,6 @@ export default {
   props: ["number", "columns"],
   components: {
     Column
-  },
-  data() {
-    return {};
   }
 };
 </script>

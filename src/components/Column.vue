@@ -80,7 +80,7 @@
 
       <div>
         <label v-show="number == 1">Yahtzee</label>
-        <input type="number" v-model.number="yatzy" :placeholder="placeholders.yatzy" />
+        <input type="number" v-model.number="yahtzee" :placeholder="placeholders.yahtzee" />
       </div>
 
       <div>
@@ -118,7 +118,7 @@ export default {
       fullHouse: "",
       smallStraight: "",
       largeStraight: "",
-      yatzy: "",
+      yahtzee: "",
       chance: ""
     };
   },
@@ -226,10 +226,10 @@ export default {
         six: six,
         threeOfAKind: 0,
         fourOfAKind: 0,
-        fullHouse: 0,
-        smallStraight: 0,
-        largeStraight: 0,
-        yatzy: 0,
+        fullHouse: 25,
+        smallStraight: 30,
+        largeStraight: 40,
+        yahtzee: 50,
         chance: 0
       };
     },
@@ -255,19 +255,19 @@ export default {
       return this.minor * this.number + this.bonus;
     },
     major() {
-      return Number(
-        (this.threeOfAKind +
-          this.fourOfAKind +
-          this.fullHouse +
-          this.smallStraight +
-          this.largeStraight +
-          this.yatzy +
-          this.chance) *
-          this.number
+      return (
+        (Number(this.threeOfAKind) +
+          Number(this.fourOfAKind) +
+          Number(this.fullHouse) +
+          Number(this.smallStraight) +
+          Number(this.largeStraight) +
+          Number(this.yahtzee) +
+          Number(this.chance)) *
+        this.number
       );
     },
     total() {
-      return Number(this.subTotal + this.major);
+      return Number(this.subTotal) + Number(this.major);
     },
     bonusStyle() {
       let style = {};
