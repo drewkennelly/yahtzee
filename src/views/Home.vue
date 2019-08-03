@@ -41,6 +41,10 @@ export default {
       columns: 3
     };
   },
-  computed: {}
+  mounted() {
+    for (let i = 1; i <= this.players; i++) {
+      this.$store.commit("createPlayer", i);
+    }
+  }
 };
 </script>

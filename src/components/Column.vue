@@ -104,7 +104,7 @@
 <script>
 export default {
   name: "column",
-  props: ["number"],
+  props: ["number", "player"],
   data() {
     return {
       one: "",
@@ -121,6 +121,15 @@ export default {
       yahtzee: "",
       chance: ""
     };
+  },
+  watch: {
+    total() {
+      this.$store.commit("updateScores", {
+        playerId: this.player,
+        column: this.number,
+        score: this.total
+      });
+    }
   },
   computed: {
     remainingForBonus() {
