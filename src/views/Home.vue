@@ -1,7 +1,7 @@
 <template>
   <div class="home">
-    <div class="flex items-center justify-between border-b pb-2 mb-4">
-      <h1 class="text-3xl">Yahtzee</h1>
+    <div class="flex items-center justify-between border-b mb-4">
+      <h1 class="text-2xl mb-1">Yahtzee</h1>
 
       <div class="flex justify-end">
         <div class>
