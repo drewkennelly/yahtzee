@@ -2,66 +2,66 @@
   <div class="column">
     <div class="flex flex-col">
       <div>
-        <label v-show="number == 1">One</label>
+        <label v-show="column == 1">One</label>
         <input type="number" v-model.number="one" :placeholder="placeholders.one" />
       </div>
 
       <div>
-        <label v-show="number == 1">Two</label>
+        <label v-show="column == 1">Two</label>
         <input type="number" v-model.number="two" :placeholder="placeholders.two" />
       </div>
 
       <div>
-        <label v-show="number == 1">Three</label>
+        <label v-show="column == 1">Three</label>
         <input type="number" v-model.number="three" :placeholder="placeholders.three" />
       </div>
 
       <div>
-        <label v-show="number == 1">Four</label>
+        <label v-show="column == 1">Four</label>
         <input type="number" v-model.number="four" :placeholder="placeholders.four" />
       </div>
 
       <div>
-        <label v-show="number == 1">Five</label>
+        <label v-show="column == 1">Five</label>
         <input type="number" v-model.number="five" :placeholder="placeholders.five" />
       </div>
 
       <div>
-        <label v-show="number == 1">Six</label>
+        <label v-show="column == 1">Six</label>
         <input type="number" v-model.number="six" :placeholder="placeholders.six" />
       </div>
 
       <div class="bold-row">
-        <label v-show="number == 1">Sub total</label>
+        <label v-show="column == 1">Sub total</label>
         <input type="number" v-model.number="minor" class="disabled-readonly" disabled readonly />
       </div>
 
       <div class="bold-row">
-        <label v-show="number == 1">Bonus</label>
+        <label v-show="column == 1">Bonus</label>
         <input type="number" v-model.number="bonus" :class="bonusStyle" disabled readonly />
       </div>
 
       <div class="bold-row">
-        <label v-show="number == 1">Total 1</label>
+        <label v-show="column == 1">Total 1</label>
         <input type="number" v-model.number="subTotal" class="disabled-readonly" disabled readonly />
       </div>
 
       <div>
-        <label v-show="number == 1">Three of a kind</label>
+        <label v-show="column == 1">Three of a kind</label>
         <input type="number" v-model.number="threeOfAKind" :placeholder="placeholders.threeOfAKind" />
       </div>
 
       <div>
-        <label v-show="number == 1">Four of a kind</label>
+        <label v-show="column == 1">Four of a kind</label>
         <input type="number" v-model.number="fourOfAKind" :placeholder="placeholders.fourOfAKind" />
       </div>
 
       <div>
-        <label v-show="number == 1">Full house</label>
+        <label v-show="column == 1">Full house</label>
         <input type="number" v-model.number="fullHouse" :placeholder="placeholders.fullHouse" />
       </div>
       <div>
-        <label v-show="number == 1">Small straight</label>
+        <label v-show="column == 1">Small straight</label>
         <input
           type="number"
           v-model.number="smallStraight"
@@ -70,7 +70,7 @@
       </div>
 
       <div>
-        <label v-show="number == 1">Large straight</label>
+        <label v-show="column == 1">Large straight</label>
         <input
           type="number"
           v-model.number="largeStraight"
@@ -79,23 +79,29 @@
       </div>
 
       <div>
-        <label v-show="number == 1">Yahtzee</label>
+        <label v-show="column == 1">Yahtzee</label>
         <input type="number" v-model.number="yahtzee" :placeholder="placeholders.yahtzee" />
       </div>
 
       <div>
-        <label v-show="number == 1">Chance</label>
+        <label v-show="column == 1">Chance</label>
         <input type="number" v-model.number="chance" :placeholder="placeholders.chance" />
       </div>
 
       <div class="bold-row">
-        <label v-show="number == 1">Total 2</label>
+        <label v-show="column == 1">Total 2</label>
         <input type="number" v-model.number="major" class="disabled-readonly" disabled readonly />
       </div>
 
       <div class="bold-row">
-        <label v-show="number == 1">Total</label>
-        <input type="number" v-model.number="total" class="disabled-readonly" disabled readonly />
+        <label v-show="column == 1">Total</label>
+        <input
+          type="number"
+          v-model.number="totalScore"
+          class="disabled-readonly"
+          disabled
+          readonly
+        />
       </div>
     </div>
   </div>
@@ -104,7 +110,7 @@
 <script>
 export default {
   name: "column",
-  props: ["number", "player"],
+  props: ["player", "column"],
   data() {
     return {
       one: "",
@@ -123,11 +129,11 @@ export default {
     };
   },
   watch: {
-    total() {
+    totalScore() {
       this.$store.commit("updateScores", {
         playerId: this.player,
-        column: this.number,
-        score: this.total
+        column: this.column,
+        score: this.totalScore
       });
     }
   },
@@ -261,7 +267,7 @@ export default {
       return Number(bonus);
     },
     subTotal() {
-      return this.minor * this.number + this.bonus;
+      return this.minor * this.column + this.bonus;
     },
     major() {
       return (
@@ -272,10 +278,10 @@ export default {
           Number(this.largeStraight) +
           Number(this.yahtzee) +
           Number(this.chance)) *
-        this.number
+        this.column
       );
     },
-    total() {
+    totalScore() {
       return Number(this.subTotal) + Number(this.major);
     },
     bonusStyle() {

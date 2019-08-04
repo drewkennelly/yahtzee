@@ -6,22 +6,22 @@
       <div class="flex justify-end">
         <div class>
           <label for class="w-auto mr-2">Players</label>
-          <input type="number" class="w-16" v-model.number="players" />
+          <input type="number" class="w-16" v-model.number="numberOfPlayers" />
         </div>
 
         <div class="ml-8">
           <label for class="w-auto mr-2">Columns</label>
-          <input type="number" class="w-16" v-model.number="columns" />
+          <input type="number" class="w-16" v-model.number="numberOfColumns" />
         </div>
       </div>
     </div>
 
     <div class="flex flex-wrap -mx-6">
       <Player
-        v-for="player in players"
+        v-for="player in numberOfPlayers"
         :key="player"
-        :number="player"
-        :columns="columns"
+        :player="player"
+        :columns="numberOfColumns"
         class="px-6"
       ></Player>
     </div>
@@ -37,12 +37,12 @@ export default {
   },
   data() {
     return {
-      players: 2,
-      columns: 3
+      numberOfPlayers: 2,
+      numberOfColumns: 3
     };
   },
   mounted() {
-    for (let i = 1; i <= this.players; i++) {
+    for (let i = 1; i <= this.numberOfPlayers; i++) {
       this.$store.commit("createPlayer", i);
     }
   }

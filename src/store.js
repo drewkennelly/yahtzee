@@ -11,7 +11,8 @@ export default new Vuex.Store({
     createPlayer(state, playerId) {
       state.players.push({
         id: playerId,
-        scores: []
+        scores: [],
+        total: 0
       });
     },
     updateScores(state, data) {
@@ -20,6 +21,7 @@ export default new Vuex.Store({
       playersClone.forEach(player => {
         if (player.id == playerId) {
           player.scores[column] = score;
+          player.total = player.scores.reduce((a, b) => a + b, 0);
         }
       });
 
