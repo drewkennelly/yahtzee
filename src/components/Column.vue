@@ -92,17 +92,6 @@
         <label v-show="column == 1">Total 2</label>
         <input type="number" v-model.number="major" class="disabled-readonly" disabled readonly />
       </div>
-
-      <div class="bold-row">
-        <label v-show="column == 1">Total</label>
-        <input
-          type="number"
-          v-model.number="totalScore"
-          class="disabled-readonly"
-          disabled
-          readonly
-        />
-      </div>
     </div>
   </div>
 </template>
@@ -296,7 +285,8 @@ export default {
 
       if (this.bonus == 35) {
         style = {
-          "bg-green-300": true
+          "bg-green-300": true,
+          "text-green-800": true
         };
       } else {
         style = {

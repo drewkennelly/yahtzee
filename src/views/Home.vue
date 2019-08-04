@@ -6,12 +6,12 @@
       <div class="flex justify-end">
         <div class>
           <label for class="w-auto mr-2">Players</label>
-          <input type="number" class="w-16" v-model.number="numberOfPlayers" />
+          <input type="number" class="w-16" v-model.number="numberOfPlayers" min="1" />
         </div>
 
         <div class="ml-8">
           <label for class="w-auto mr-2">Columns</label>
-          <input type="number" class="w-16" v-model.number="numberOfColumns" />
+          <input type="number" class="w-16" v-model.number="numberOfColumns" min="1" />
         </div>
       </div>
     </div>
