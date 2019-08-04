@@ -90,7 +90,13 @@
 
       <div class="bold-row">
         <label v-show="column == 1">Total 2</label>
-        <input type="number" v-model.number="major" class="disabled-readonly" disabled readonly />
+        <input
+          type="number"
+          v-model.number="major"
+          class="disabled-readonly mb-0"
+          disabled
+          readonly
+        />
       </div>
     </div>
   </div>
