@@ -128,6 +128,13 @@ export default {
       chance: ""
     };
   },
+  beforeDestroy() {
+    this.$store.commit("updateScores", {
+      playerId: this.player,
+      column: this.column,
+      score: 0
+    });
+  },
   watch: {
     totalScore() {
       this.$store.commit("updateScores", {

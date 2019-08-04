@@ -27,6 +27,9 @@ export default {
   components: {
     Column
   },
+  mounted() {
+    this.$store.commit("createPlayer", this.player);
+  },
   computed: {
     total() {
       let players = this.$store.state.players;

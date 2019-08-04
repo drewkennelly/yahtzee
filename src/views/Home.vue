@@ -40,11 +40,6 @@ export default {
       numberOfPlayers: 2,
       numberOfColumns: 3
     };
-  },
-  mounted() {
-    for (let i = 1; i <= this.numberOfPlayers; i++) {
-      this.$store.commit("createPlayer", i);
-    }
   }
 };
 </script>
