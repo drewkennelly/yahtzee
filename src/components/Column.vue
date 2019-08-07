@@ -3,67 +3,120 @@
     <div class="flex flex-col">
       <div>
         <label v-show="column == 1">One</label>
-        <input type="number" v-model.number="one" :placeholder="placeholders.one" />
+        <input
+          type="number"
+          class="placeholder-gray-500"
+          v-model.number="one"
+          :placeholder="placeholders.one"
+        />
       </div>
 
       <div>
         <label v-show="column == 1">Two</label>
-        <input type="number" v-model.number="two" :placeholder="placeholders.two" />
+        <input
+          type="number"
+          class="placeholder-gray-500"
+          v-model.number="two"
+          :placeholder="placeholders.two"
+        />
       </div>
 
       <div>
         <label v-show="column == 1">Three</label>
-        <input type="number" v-model.number="three" :placeholder="placeholders.three" />
+        <input
+          type="number"
+          class="placeholder-gray-500"
+          v-model.number="three"
+          :placeholder="placeholders.three"
+        />
       </div>
 
       <div>
         <label v-show="column == 1">Four</label>
-        <input type="number" v-model.number="four" :placeholder="placeholders.four" />
+        <input
+          type="number"
+          class="placeholder-gray-500"
+          v-model.number="four"
+          :placeholder="placeholders.four"
+        />
       </div>
 
       <div>
         <label v-show="column == 1">Five</label>
-        <input type="number" v-model.number="five" :placeholder="placeholders.five" />
+        <input
+          type="number"
+          class="placeholder-gray-500"
+          v-model.number="five"
+          :placeholder="placeholders.five"
+        />
       </div>
 
       <div>
         <label v-show="column == 1">Six</label>
-        <input type="number" v-model.number="six" :placeholder="placeholders.six" />
+        <input
+          type="number"
+          class="placeholder-gray-500"
+          v-model.number="six"
+          :placeholder="placeholders.six"
+        />
       </div>
 
       <div class="bold-row">
         <label v-show="column == 1">Sub total</label>
-        <input type="number" v-model.number="minor" class="disabled-readonly" disabled readonly />
+        <input type="number" class="disabled-readonly" v-model.number="minor" disabled readonly />
       </div>
 
       <div class="bold-row">
         <label v-show="column == 1">Bonus</label>
-        <input type="number" v-model.number="bonus" :class="bonusStyle" disabled readonly />
+        <input
+          type="number"
+          class="placeholder-gray-500"
+          v-model.number="bonus"
+          :class="bonusStyle"
+          disabled
+          readonly
+        />
       </div>
 
       <div class="bold-row">
         <label v-show="column == 1">Total 1</label>
-        <input type="number" v-model.number="subTotal" class="disabled-readonly" disabled readonly />
+        <input type="number" class="disabled-readonly" v-model.number="subTotal" disabled readonly />
       </div>
 
       <div>
         <label v-show="column == 1">Three of a kind</label>
-        <input type="number" v-model.number="threeOfAKind" :placeholder="placeholders.threeOfAKind" />
+        <input
+          type="number"
+          class="placeholder-gray-500"
+          v-model.number="threeOfAKind"
+          :placeholder="placeholders.threeOfAKind"
+        />
       </div>
 
       <div>
         <label v-show="column == 1">Four of a kind</label>
-        <input type="number" v-model.number="fourOfAKind" :placeholder="placeholders.fourOfAKind" />
+        <input
+          type="number"
+          class="placeholder-gray-500"
+          v-model.number="fourOfAKind"
+          :placeholder="placeholders.fourOfAKind"
+        />
       </div>
 
       <div>
         <label v-show="column == 1">Full house</label>
-        <input type="number" v-model.number="fullHouse" :placeholder="placeholders.fullHouse" />
+        <input
+          type="number"
+          class="placeholder-gray-500"
+          v-model.number="fullHouse"
+          :placeholder="placeholders.fullHouse"
+        />
       </div>
       <div>
         <label v-show="column == 1">Small straight</label>
         <input
           type="number"
+          class="placeholder-gray-500"
           v-model.number="smallStraight"
           :placeholder="placeholders.smallStraight"
         />
@@ -73,6 +126,7 @@
         <label v-show="column == 1">Large straight</label>
         <input
           type="number"
+          class="placeholder-gray-500"
           v-model.number="largeStraight"
           :placeholder="placeholders.largeStraight"
         />
@@ -80,20 +134,30 @@
 
       <div>
         <label v-show="column == 1">Yahtzee</label>
-        <input type="number" v-model.number="yahtzee" :placeholder="placeholders.yahtzee" />
+        <input
+          type="number"
+          class="placeholder-gray-500"
+          v-model.number="yahtzee"
+          :placeholder="placeholders.yahtzee"
+        />
       </div>
 
       <div>
         <label v-show="column == 1">Chance</label>
-        <input type="number" v-model.number="chance" :placeholder="placeholders.chance" />
+        <input
+          type="number"
+          class="placeholder-gray-500"
+          v-model.number="chance"
+          :placeholder="placeholders.chance"
+        />
       </div>
 
       <div class="bold-row">
         <label v-show="column == 1">Total 2</label>
         <input
           type="number"
-          v-model.number="major"
           class="disabled-readonly mb-0"
+          v-model.number="major"
           disabled
           readonly
         />
