@@ -16,13 +16,13 @@
       </div>
     </div>
 
-    <div class="flex flex-wrap -mx-6">
+    <div class="flex flex-wrap -mx-4">
       <Player
         v-for="player in numberOfPlayers"
         :key="player"
         :player="player"
         :columns="numberOfColumns"
-        class="px-6"
+        class="px-4"
       ></Player>
     </div>
   </div>

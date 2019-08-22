@@ -7,7 +7,7 @@
         placeholder="Enter player name..."
         class="w-auto border-0 text-left pl-0 py-0"
       />
-      <h2 class="text-xs">{{ total }} {{ pointString }}</h2>
+      <h2 class="text-xs font-bold">{{ total }} {{ pointString }}</h2>
     </div>
 
     <div class="flex px-1">
