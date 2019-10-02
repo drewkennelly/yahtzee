@@ -1,0 +1,7 @@
+# These rules will change if you change your site’s custom domains or HTTPS settings
+
+# Redirect domain aliases to primary domain
+https://yahtzee.drewkennelly.co.nz/* https://yahtzee.drewkennelly.co/:splat 301!
+
+# Optional: Redirect default Netlify subdomain to primary domain
+https://yahtzeee.netlify.com/* https://yahtzee.drewkennelly.co/:splat 301!
