@@ -1,17 +1,17 @@
 <template>
-  <div class="player">
-    <div class="flex justify-between items-center mb-1">
+  <div class="player mb-8">
+    <div class="flex justify-between items-center mb-2">
       <input
         type="text"
         v-model="playerName"
         placeholder="Enter player name..."
         class="w-auto border-0 text-left pl-0 py-0"
       />
-      <h2 class="text-xs font-bold">{{ total }} {{ pointString }}</h2>
+      <h2 class="text-sm font-bold text-gray-800">{{ total }} {{ pointString }}</h2>
     </div>
 
     <div class="flex px-1">
-      <div class="flex -mx-1 rounded p-2 shadow border border-gray-200" :class="boxStyle">
+      <div class="flex -mx-1 rounded p-3 border border-gray-300" :class="boxStyle">
         <Column
           v-for="column in columns"
           :key="column"

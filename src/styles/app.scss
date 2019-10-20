@@ -1,4 +1,24 @@
-@import "tailwind";
+@tailwind base;
+
+@tailwind components;
+
+@import url("https://rsms.me/inter/inter.css");
+
+html {
+  font-family: "Inter", sans-serif;
+}
+
+@supports (font-variation-settings: normal) {
+  html {
+    font-family: "Inter var", sans-serif;
+    font-feature-settings: "liga" 1, "case" 1, "ss01" 1, "ss02" 1, "ss03" 1,
+      "salt" 1, "cpsp" 1;
+  }
+}
+
+body {
+  @apply antialiased;
+}
 
 input {
   @apply border rounded px-2 w-auto w-12 py-1 text-center mb-1 appearance-none text-sm outline-none;
@@ -19,11 +39,10 @@ label {
 }
 
 .bold-row {
-  label {
-    @apply font-bold;
-  }
-
+  label,
   input {
-    @apply font-semibold text-gray-700
+    @apply font-semibold text-gray-600;
   }
 }
+
+@tailwind utilities;
