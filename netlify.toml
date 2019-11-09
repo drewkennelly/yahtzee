@@ -1,5 +1,5 @@
 [[redirects]]
-    from = "https://yahtzee.drewkennelly.co/"
+    from = "https://yahtzee.drewkennelly.co/*"
     to = "https://yahtzee.drewkennelly.co.nz/:splat"
     status = 301
     force = true
