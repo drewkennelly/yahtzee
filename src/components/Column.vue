@@ -356,12 +356,12 @@ export default {
       if (this.bonus == 35) {
         style = {
           "bg-green-300": true,
-          "text-green-800": true
+          "text-green-700": true
         };
       } else {
         style = {
           "bg-transparent": true,
-          "border-gray-100": true
+          "border-none": true
         };
       }
 

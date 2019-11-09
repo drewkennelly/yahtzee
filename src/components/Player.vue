@@ -5,12 +5,12 @@
         type="text"
         v-model="playerName"
         placeholder="Enter player name..."
-        class="w-auto border-0 text-left pl-0 py-0"
+        class="w-auto border-0 text-left pl-1 py-0 bg-gray-100 font-semibold text-base"
       />
-      <h2 class="text-sm font-bold text-gray-800">{{ total }} {{ pointString }}</h2>
+      <h2 class="font-bold text-gray-800 pr-1">{{ total }} {{ pointString }}</h2>
     </div>
 
-    <div class="flex px-1">
+    <div class="flex px-1 bg-white">
       <div class="flex -mx-1 rounded p-3 border border-gray-300" :class="boxStyle">
         <Column
           v-for="column in columns"
@@ -77,7 +77,7 @@ export default {
       if (this.winner) {
         if (this.topScore == 0) {
           style = {
-            "bg-gray-100": true,
+            "bg-white": true,
             "border-gray-200": true
           };
         } else {

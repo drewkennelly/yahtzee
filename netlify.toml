@@ -1,0 +1,22 @@
+[[redirects]]
+    from = "https://yahtzee.drewkennelly.co/"
+    to = "https://yahtzee.drewkennelly.co.nz/:splat"
+    status = 301
+    force = true
+
+[[redirects]]
+    from = "https://yahtzeee.netlify.com/*"
+    to = "https://yahtzee.drewkennelly.co.nz/:splat"
+    status = 301
+    force = true
+
+[[redirects]]
+    from = "https://pay-calculator.netlify.com/*"
+    to = "https://yahtzee.drewkennelly.co.nz/:splat"
+    status = 301
+    force = true
+
+[[redirects]]
+  from = "/*"
+  to = "/index.html"
+  status = 200

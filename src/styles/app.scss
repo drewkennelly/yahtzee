@@ -1,23 +1,8 @@
 @tailwind base;
-
 @tailwind components;
 
-@import url("https://rsms.me/inter/inter.css");
-
-html {
-  font-family: "Inter", sans-serif;
-}
-
-@supports (font-variation-settings: normal) {
-  html {
-    font-family: "Inter var", sans-serif;
-    font-feature-settings: "liga" 1, "case" 1, "ss01" 1, "ss02" 1, "ss03" 1,
-      "salt" 1, "cpsp" 1;
-  }
-}
-
 body {
-  @apply antialiased;
+  @apply text-gray-900 bg-gray-100 antialiased;
 }
 
 input {
@@ -31,17 +16,17 @@ input[type="number"]::-webkit-outer-spin-button {
 }
 
 label {
-  @apply text-xs uppercase text-gray-600 inline-block mr-4 w-32;
+  @apply text-xs uppercase text-gray-700 inline-block mr-4 w-32 tracking-wider;
 }
 
 .disabled-readonly {
-  @apply bg-transparent border-gray-100;
+  @apply bg-transparent border-none;
 }
 
 .bold-row {
   label,
   input {
-    @apply font-semibold text-gray-600;
+    @apply font-semibold;
   }
 }
 
