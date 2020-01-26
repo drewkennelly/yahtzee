@@ -1,17 +1,31 @@
 <template>
   <div class="home flex flex-col min-h-screen">
-    <div class="bg-white shadow flex justify-between mb-8 items-center px-8 py-2">
-      <h1 class="text-4xl font-semibold tracking-tighter text-blue-700 flex-1">Yahtzee</h1>
+    <div
+      class="bg-white shadow flex justify-between mb-8 items-center px-8 py-1"
+    >
+      <h1 class="text-3xl font-bold tracking-tighter text-blue-700 flex-1">
+        Yahtzee
+      </h1>
 
       <div class="flex flex-wrap justify-end">
         <div class="mb-1 md:mb-0">
           <label for class="w-auto mr-2">Players</label>
-          <input type="number" class="w-16 mb-0" v-model.number="numberOfPlayers" min="1" />
+          <input
+            type="number"
+            class="w-16 mb-0"
+            v-model.number="numberOfPlayers"
+            min="1"
+          />
         </div>
 
         <div class="md:ml-8">
           <label for class="w-auto mr-2">Columns</label>
-          <input type="number" class="w-16 mb-0" v-model.number="numberOfColumns" min="1" />
+          <input
+            type="number"
+            class="w-16 mb-0"
+            v-model.number="numberOfColumns"
+            min="1"
+          />
         </div>
       </div>
     </div>
@@ -26,8 +40,7 @@
       ></Player>
     </main>
 
-
-    <footer class="px-8 py-4 bg-blue-700 text-blue-100 text-sm">
+    <footer class="px-8 py-4 bg-blue-700 text-blue-100 text-xs text-right">
       Built by Drew Kennelly
     </footer>
   </div>
