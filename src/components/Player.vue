@@ -7,11 +7,16 @@
         placeholder="Enter player name..."
         class="w-auto border-0 text-left pl-1 py-0 bg-gray-100 font-semibold text-base"
       />
-      <h2 class="font-bold text-gray-800 pr-1">{{ total }} {{ pointString }}</h2>
+      <h2 class="font-bold text-gray-800 pr-1">
+        {{ total }} {{ pointString }}
+      </h2>
     </div>
 
     <div class="flex px-1 bg-white">
-      <div class="flex -mx-1 rounded p-3 border border-gray-300" :class="boxStyle">
+      <div
+        class="flex -mx-1 rounded p-3 border border-gray-300"
+        :class="boxStyle"
+      >
         <Column
           v-for="column in columns"
           :key="column"

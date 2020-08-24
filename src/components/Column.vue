@@ -63,7 +63,13 @@
 
       <div class="bold-row">
         <label v-show="column == 1">Sub total</label>
-        <input type="number" class="disabled-readonly" v-model.number="minor" disabled readonly />
+        <input
+          type="number"
+          class="disabled-readonly"
+          v-model.number="minor"
+          disabled
+          readonly
+        />
       </div>
 
       <div class="bold-row">
@@ -80,7 +86,13 @@
 
       <div class="bold-row">
         <label v-show="column == 1">Total 1</label>
-        <input type="number" class="disabled-readonly" v-model.number="subTotal" disabled readonly />
+        <input
+          type="number"
+          class="disabled-readonly"
+          v-model.number="subTotal"
+          disabled
+          readonly
+        />
       </div>
 
       <div>
